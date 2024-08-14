@@ -168,29 +168,41 @@ let students = [
 
 //FUNCTION -- CALCULATE GRADE AVG
 function gradeAverage() {
-  let total = 0;
+  let total = 0; //sets total value to 0
+  //loops through students arr lenght
   for (let i = 0; i < students.length; i++) {
     total += students[i].grade; //adds all grades as it loops and stores in 'total'
   } //END FOR LOOP
-  let average = total / students.length;
-  return average;
+  let average = total / students.length; //stores total / lenght of arr in average
+  return average; //returns results to gradeAverage
 } //END gradeAverage FUNCTION
 
 //FUNCTION -- IDENTIFY STUDENTS BELOW AVG
 function belowAverageStudents() {
-    let average = gradeAverage();
-    let belowAvg=[];
-    for (let i = 0; i < students.length; i++){
-        if(students[i].grade < average){
-            belowAvg.push(students[i]);
-        } //END IF STATEMENT
-    }//END FOR LOOP
-
+  let average = gradeAverage();
+  let belowAvg = []; //int arr that will store below avg students
+  //loops through student arr
+  for (let i = 0; i < students.length; i++) {
+    //if student grade is < average
+    if (students[i].grade < average) {
+      belowAvg.push(students[i]); //adds strudent to belowAvg arr
+    } //END IF STATEMENT
+  } //END FOR LOOP
+  return belowAvg;
 } //END belowAverageStudents FUNCTION
 
 //OUTPUT -- DISPLAY TO CONSOLE GRADE AVERAGE AND LIST OF STUDENT BELOW AVERAGE
+let avg = gradeAverage(); //stores gradeAvg results into avg
+console.log(`Grade Average: ${avg.toFixed(2)}`); // toFixed(2) formats the average to 2 decimal places
 
-
+let belowAvgStudents = belowAverageStudents();
+console.log("Students Below Average:");
+//loops through belowAvgStudents to display each object in the arr
+for (let i = 0; i < belowAvgStudents.length; i++) {
+  console.log(
+    `${belowAvgStudents[i].name} - Grade: ${belowAvgStudents[i].grade}`
+  );
+}
 
 //#endregion
 
