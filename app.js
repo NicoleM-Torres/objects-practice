@@ -212,53 +212,90 @@ let movie = [
     title: `Dune: Part Two
 `,
     genre: `Sci-fi/Adventure`,
-    rating: `8.5`,
+    rating: 8.5,
   },
   {
     title: `Furiosa: A Mad Max Saga`,
     genre: `Action/Adventure`,
-    rating: `7.6`,
+    rating: 7.6,
   },
   {
     title: `Inside Out 2`,
     genre: `Family/Comedy`,
-    rating: `7.8`,
+    rating: 7.8,
   },
   {
     title: `Ghostlight`,
     genre: `Comedy/Drama`,
-    rating: `7.7`,
+    rating: 7.7,
   },
   {
     title: `Challengers`,
     genre: `Sports/Romance`,
-    rating: `7.2`,
+    rating: 7.2,
   },
   {
     title: `Deadpool & Wolverine`,
     genre: ` Action/Comedy`,
-    rating: `8.1`,
+    rating: 8.1,
   },
 ];
 
-//FUNCTION -- ADD A MOVIE
-function addMovie (){
+// ADD MOVIE
+addMovie("The Avengers", "Action", 8.5);
 
-}//END addMovie FUCNTION
+// RATE MOVIE IN COLLECTION
+rateMovie("Ghostlight", 9.0);
+
+// MOVIE COLLECTION
+viewCollection();
+
+//FUNCTION -- ADD A MOVIE
+function addMovie(title, genre, rating) {
+  //loops through arr to check if movie is already part of the collection
+  for (let i = 0; i < movie.length; i++) {
+    if (movie[i].title.toLowerCase() === title.toLowerCase()) {
+      console.log(`Movie ${title} already exists.`);
+      return;
+    } //END IF STATEMENT
+  } //END FOR LOOP
+
+  //ADD NEW MOVIE
+  movie.push({ title, genre, rating });
+  console.log(`Movie ${title} added.`);
+} //END addMovie FUCNTION
 
 //FUNCTION -- RATE A MOVIE
-function rateMovie() {
-
-} //END rateMovie FUNCTION  
-
+function rateMovie(title, newRating) {
+  //loops through lenght of movie arr
+  for (let i = 0; i < movie.length; i++) {
+    if (movie[i].title.toLowerCase() === title.toLowerCase()) {
+      movie[i].rating = newRating;
+      console.log(`Movie ${title} rated with ${newRating}`);
+      return;
+    } //END IF STATEMENT
+    console.log(`Movie ${title} not part of collection.`);
+  } //END FOR LOOP
+} //END rateMovie FUNCTION
 
 //FUCNTION -- VIEW COLLECTION
-function viewCollection (){
-
-}//END viewCollection FUNCTION
+function viewCollection() {
+  if (movie.length === 0) {
+    console.log(`No movies in the collection`);
+    return;
+  } //END IF STATEMENT
+  console.log("Movie Collection");
+  for (let i = 0; i < movie.length; i++) {
+    console.log(
+      `${i + 1}. Title: ${movie[i].title}, Genre: ${movie[i].genre}, Rating: ${
+        movie[i].rating
+      }`
+    );
+  } //END FOR LOOP
+} //END viewCollection FUNCTION
 
 //OUTPUT -- DISPLAY THE MOVIE COLLECTION AND RATINGS
-console.log ();
+console.log();
 
 //#endregion
 
