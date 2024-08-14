@@ -1,58 +1,58 @@
 //#region OBJECTS EXAMPLES
 
-let favCharacter = {
-  fName: "Bob",
-  lName: "Ross",
-  age: "52 -- dead",
-  occupation: "artist",
-  hobbies: ["film wildlife", "help injured animals recover", "smoking"],
-  currentHealth: "unalived",
-};
+// let favCharacter = {
+//   fName: "Bob",
+//   lName: "Ross",
+//   age: "52 -- dead",
+//   occupation: "artist",
+//   hobbies: ["film wildlife", "help injured animals recover", "smoking"],
+//   currentHealth: "unalived",
+// };
 
-//CALLS ENTIRE OBJECT & PROPERTIES
-console.log(favCharacter);
-//CALLING PROPERTY TYPE VALUES
-console.log(
-  `My fav characters name is ${favCharacter.fName} ${favCharacter.lName}`
-);
-//CALLING PROPERTY TYPE THAT HAS AN ARRAY
-console.log(
-  `One of my favorite characters hobbies is ${favCharacter.hobbies[2]}`
-);
+// //CALLS ENTIRE OBJECT & PROPERTIES
+// console.log(favCharacter);
+// //CALLING PROPERTY TYPE VALUES
+// console.log(
+//   `My fav characters name is ${favCharacter.fName} ${favCharacter.lName}`
+// );
+// //CALLING PROPERTY TYPE THAT HAS AN ARRAY
+// console.log(
+//   `One of my favorite characters hobbies is ${favCharacter.hobbies[2]}`
+// );
 
-//UPDATE PROPERTY VALUE
-favCharacter.currentHealth = "Haunting others";
-console.log(favCharacter.currentHealth);
+// //UPDATE PROPERTY VALUE
+// favCharacter.currentHealth = "Haunting others";
+// console.log(favCharacter.currentHealth);
 
-//ADDING A NEW  PROPERTY TO THE OBJECT VARIABLE
-favCharacter.paintingSkills = "Alla prima painting technique";
-console.log(favCharacter);
+// //ADDING A NEW  PROPERTY TO THE OBJECT VARIABLE
+// favCharacter.paintingSkills = "Alla prima painting technique";
+// console.log(favCharacter);
 
-//!ARRAY OBJECTS
+// //!ARRAY OBJECTS
 
-let listOfMusic = [
-  {
-    title: `Never Give Up`,
-    artist: `Rick Astley`,
-    year: 1987,
-  },
-  {
-    title: `Black Magic Woman`,
-    artist: `Santana`,
-    year: 1960,
-  },
-];
+// let listOfMusic = [
+//   {
+//     title: `Never Give Up`,
+//     artist: `Rick Astley`,
+//     year: 1987,
+//   },
+//   {
+//     title: `Black Magic Woman`,
+//     artist: `Santana`,
+//     year: 1960,
+//   },
+// ];
 
-//FORMAT: nameOfVar[#] = target object in that index
-console.log(
-  `${listOfMusic[0].title} will grab the whole object in that index number.`
-);
+// //FORMAT: nameOfVar[#] = target object in that index
+// console.log(
+//   `${listOfMusic[0].title} will grab the whole object in that index number.`
+// );
 
-//GIVES YOU THE LENGHT OF THE PROPERTIES IN AN OBJECT
-let currentObjectsLenght = Object.keys(listOfMusic[0]).length;
-console.log(
-  `${listOfMusic[1]}will  return object object as long as it's not a string`
-); //
+// //GIVES YOU THE LENGHT OF THE PROPERTIES IN AN OBJECT
+// let currentObjectsLenght = Object.keys(listOfMusic[0]).length;
+// console.log(
+//   `${listOfMusic[1]}will  return object object as long as it's not a string`
+// ); //
 
 //#endregion
 
@@ -92,36 +92,66 @@ let contactBook = [
   },
 ];
 
-function addContact(name, phoneNumber, email) {
-  //adds new contact to ContactBook arr
-  contactBook.push({ name, phoneNumber, email });
-  console.log(`COntact ${name} was added to contact book.`);
-} //END addContactFunction
+// NEW CONTACT
+addContact("Sarah", 4444444444, "sarah@lucky.com");
 
+// VIEW CONTACTS
+viewContacts();
+
+// SEARCH CONTACT
+searchContactByName("Eric");
+
+// SEARCH FOR NOT EXISTING CONTACT
+searchContactByName("Zach");
+
+//FUNCTION -- ADDING A NEW CONTACT
+function addContact(name, phoneNumber, email) {
+  contactBook.push({ name, phoneNumber, email }); //adds new element to arr
+  console.log(`Contact ${name} added.`);
+} //END addContact FUNCTION
+
+//FUNCTION -- VIEW CONTACTS
 function viewContacts() {
+  //if there are no contacts in the arr
   if (contactBook.length === 0) {
-    console.log(`No contacts logged.`);
+    console.log("No contacts available.");
     return;
   } //END IF STATEMENT
-  console.log(`Contact List:`);
+
+  console.log("Contact List:");
+  //loops through contactBook arr and displays on the console
   for (let i = 0; i < contactBook.length; i++) {
     let contact = contactBook[i];
     console.log(
-      `${i + 1}. Name: ${contact.name}, Phone #:${
-        contact.phoneNumber
-      }, Email: ${contact.email}`
+      `${i + 1}. Name: ${contact.name}, Phone: ${contact.phoneNumber}, Email: ${
+        contact.email
+      }`
     );
-  }//END FOR LOOP   
-
+  } //END FOR LOOP
 } //END viewContacts FUNCTION
 
-function searchContactByName() {
-
-    
-}
-
-// OUTPUT -- DISPLAY CONTACTS & SEARCH RESULTS
-console.log();
+//FUNCTION -- SEARCH CONTACTS
+function searchContactByName(name) {
+  let isfound = false;
+  console.log("Search Results:");
+  //loops through arr elements
+  for (let i = 0; i < contactBook.length; i++) {
+    const contact = contactBook[i];
+    //if name on contact list matches name searched it means isFound = true
+    if (contact.name.toLowerCase() === name.toLowerCase()) {
+      console.log(
+        `${i + 1}. Name: ${contact.name}, Phone: ${
+          contact.phoneNumber
+        }, Email: ${contact.email}`
+      );
+      isfound = true;
+    } //END IF STATEMENT
+  } //END FOR LOOP
+  //if name on contact list != name seached isFound = false
+  if (!isfound) {
+    console.log(`No contact found with the name ${name}.`);
+  } //END IF STATEMENT
+} //END searchContactByName FUNCTION
 
 //#endregion
 
@@ -135,6 +165,32 @@ let students = [
   { name: "David", grade: 63 },
   { name: "Eve", grade: 78 },
 ];
+
+//FUNCTION -- CALCULATE GRADE AVG
+function gradeAverage() {
+  let total = 0;
+  for (let i = 0; i < students.length; i++) {
+    total += students[i].grade; //adds all grades as it loops and stores in 'total'
+  } //END FOR LOOP
+  let average = total / students.length;
+  return average;
+} //END gradeAverage FUNCTION
+
+//FUNCTION -- IDENTIFY STUDENTS BELOW AVG
+function belowAverageStudents() {
+    let average = gradeAverage();
+    let belowAvg=[];
+    for (let i = 0; i < students.length; i++){
+        if(students[i].grade < average){
+            belowAvg.push(students[i]);
+        } //END IF STATEMENT
+    }//END FOR LOOP
+
+} //END belowAverageStudents FUNCTION
+
+//OUTPUT -- DISPLAY TO CONSOLE GRADE AVERAGE AND LIST OF STUDENT BELOW AVERAGE
+
+
 
 //#endregion
 
