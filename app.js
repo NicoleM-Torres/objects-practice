@@ -274,8 +274,8 @@ function rateMovie(title, newRating) {
       console.log(`Movie ${title} rated with ${newRating}`);
       return;
     } //END IF STATEMENT
-    console.log(`Movie ${title} not part of collection.`);
   } //END FOR LOOP
+  console.log(`Movie ${title} not part of collection.`);
 } //END rateMovie FUNCTION
 
 //FUCNTION -- VIEW COLLECTION
@@ -293,9 +293,6 @@ function viewCollection() {
     );
   } //END FOR LOOP
 } //END viewCollection FUNCTION
-
-//OUTPUT -- DISPLAY THE MOVIE COLLECTION AND RATINGS
-console.log();
 
 //#endregion
 
