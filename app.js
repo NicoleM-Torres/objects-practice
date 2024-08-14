@@ -207,6 +207,58 @@ for (let i = 0; i < belowAvgStudents.length; i++) {
 //#endregion
 
 //#region Movie Collection Tracker
+let movie = [
+  {
+    title: `Dune: Part Two
+`,
+    genre: `Sci-fi/Adventure`,
+    rating: `8.5`,
+  },
+  {
+    title: `Furiosa: A Mad Max Saga`,
+    genre: `Action/Adventure`,
+    rating: `7.6`,
+  },
+  {
+    title: `Inside Out 2`,
+    genre: `Family/Comedy`,
+    rating: `7.8`,
+  },
+  {
+    title: `Ghostlight`,
+    genre: `Comedy/Drama`,
+    rating: `7.7`,
+  },
+  {
+    title: `Challengers`,
+    genre: `Sports/Romance`,
+    rating: `7.2`,
+  },
+  {
+    title: `Deadpool & Wolverine`,
+    genre: ` Action/Comedy`,
+    rating: `8.1`,
+  },
+];
+
+//FUNCTION -- ADD A MOVIE
+function addMovie (){
+
+}//END addMovie FUCNTION
+
+//FUNCTION -- RATE A MOVIE
+function rateMovie() {
+
+} //END rateMovie FUNCTION  
+
+
+//FUCNTION -- VIEW COLLECTION
+function viewCollection (){
+
+}//END viewCollection FUNCTION
+
+//OUTPUT -- DISPLAY THE MOVIE COLLECTION AND RATINGS
+console.log ();
 
 //#endregion
 
