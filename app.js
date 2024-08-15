@@ -157,7 +157,7 @@ function searchContactByName(name) {
 
 //#region Student Grade Managent
 
-//OBJECT --  VAR
+//OBJECT --  arr
 let students = [
   { name: "Alice", grade: 85 },
   { name: "Bob", grade: 76 },
@@ -312,8 +312,10 @@ let books_arr = [
 
 //FUNCTION-- FILTER AVAILABLE BOOKS
 function filterAvailableBooks() {
-  let availableBooks = [];
+  let availableBooks = []; //new arr holds available books
+  //loops through books arr
   for (let i = 0; i < books_arr.length; i++) {
+    //if books status = available it will 'push' element to availableBooks arr
     if (books_arr[i].status === "available") {
       availableBooks.push(books_arr[i]);
     } //EDN IF STATEMENT
@@ -323,8 +325,10 @@ function filterAvailableBooks() {
 
 //FUNCTION -- FILTER BORROWED BOOKS
 function filterBorrowedBooks() {
-  let borrowedBooks = [];
+  let borrowedBooks = []; //arr that holds borrowed books
+  //loops through books arr
   for (let i = 0; i < books_arr.length; i++) {
+    //if book arr status = borrowed it will 'push element to borrowedBooks arr
     if (books_arr[i].status === "borrowed") {
       borrowedBooks.push(books_arr[i]);
     } //END IF STATEMENT
@@ -332,18 +336,80 @@ function filterBorrowedBooks() {
   return borrowedBooks;
 } //END filterBorrowedBoooks FUNCTION
 
-//DISPLAYY IN CONSOLE
+//DISPLAYY IN CONSOLE -- AVAILABLE AND BORROWED
 console.log("My available books:");
+//loops through availableBooks arr and displays list to console
 let availableBooks = filterAvailableBooks();
 for (let i = 0; i < availableBooks.length; i++) {
   console.log(`Title: ${availableBooks[i].title}`);
 } //END FOR LOOP
 
 console.log("Borrowed Books:");
+//loops through borrowedBooks arr and displays list to console
 let borrowedBooks = filterBorrowedBooks();
 for (let i = 0; i < borrowedBooks.length; i++) {
   console.log(`Title ${borrowedBooks[i].title}`);
 } //END FOR LOOP
+
+//#endregion
+
+//#region Recipe Organizer
+
+//VARIABLE--ARR
+let recipes = [
+  {
+    title: "Pancakes",
+    ingredients: ["Flour", "Eggs", "Milk"],
+    instructions: "Mix and cook on a griddle.",
+  },
+  {
+    title: "Salad",
+    ingredients: ["Lettuce", "Tomatoes", "Cucumbers"],
+    instructions: "Chop and toss with dressing.",
+  },
+];
+
+//FUNCTION -- ADD NEW RECIPE
+function addNewRecipe() {} //END addNewRecipe FUNCTION
+
+//FUNCTION -- UPDATE RECIPE INSTRUCTIONS
+function updateRecipe() {} //END updateRecipe FUNCTION
+
+//FUNCTION DISPLAY ALL RECIPES WITH DETAILS
+function displayRecipe() {} //END displayRecipe FUNCTION
+
+//#endregion
+
+//#region Car Dealership Inventory
+//VARIABLE -- ARR
+let cars = [
+  { make: "Toyota", model: "Camry", year: 2020, price: 24000 },
+  { make: "Honda", model: "Civic", year: 2019, price: 22000 },
+];
+
+//FUNCTION -- ADD NEW CARS
+function addNewCar() {} //END addNewCar FUNCTION
+
+//FUNCTION -- UPDATE CAR PRICE
+function updateCar() {} //END updateCar FUNCTION
+
+//FUNCTION -- DISPLAY CARS IN INVENTORY
+function displayCars() {} //END displayCars FUNCTION
+
+//#endregion
+
+//#region Pet Names with Details
+let petDirectory = [
+  {
+    petName: "Scooby-Doo",
+    type: "Dog",
+    age: 7,
+  },
+];
+
+// FUNCTION -- ADD A NEW PET
+
+//FUNCTION DISPLAY PET NAMES
 
 //#endregion
 
