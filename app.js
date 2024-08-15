@@ -415,7 +415,11 @@ function displayRecipe() {
 }
 
 // ADD RECIPE
-addNewRecipe("Smoothie", ["Bananas", "Orange Juice", "Strawberries"], "Blend until smooth.");
+addNewRecipe(
+  "Smoothie",
+  ["Bananas", "Orange Juice", "Strawberries"],
+  "Blend until smooth."
+);
 addNewRecipe(
   "Pasta",
   ["Pasta", "Vodka Sauce", "Veggies"],
