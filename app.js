@@ -324,13 +324,26 @@ function filterAvailableBooks() {
 function filterBorrowedBooks() {
   let borrowedBooks = [];
   for (let i = 0; i < books_arr.length; i++) {
-
-  }//END FOR LOOP
+    if (books_arr[i].status === "borrowed") {
+      borrowedBooks.push(books_arr[i]);
+    } //END IF STATEMENT
+  } //END FOR LOOP
+  return borrowedBooks;
 } //END filterBorrowedBoooks FUNCTION
 
 //DISPLAYY IN CONSOLE
-console.log();
+console.log("My available books:");
+let availableBooks = filterAvailableBooks();
+for (let i = 0; i < availableBooks.length; i++) {
+    console.log(`Title: ${availableBooks[i].title}`);
+} //END FOR LOOP
 
+
+console.log ("Borrowed Books:");
+let borrowedBooks = filterBorrowedBooks();
+for (let i = 0; i < borrowedBooks.length; i++) {
+
+}//END FOR LOOP
 //#endregion
 
 //#endregion
