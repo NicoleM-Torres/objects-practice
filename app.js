@@ -355,7 +355,6 @@ for (let i = 0; i < borrowedBooks.length; i++) {
 
 //#region Recipe Organizer
 
-//VARIABLE--ARR
 let recipes = [
   {
     title: "Pancakes",
@@ -369,14 +368,65 @@ let recipes = [
   },
 ];
 
-//FUNCTION -- ADD NEW RECIPE
-function addNewRecipe() {} //END addNewRecipe FUNCTION
+// FUNCTION -- ADD NEW RECIPE
+function addNewRecipe(title, ingredients, instructions) {
+  // loop through recipie arr
+  for (let i = 0; i < recipes.length; i++) {
+    //if recipe is = to new recipe title then it will consolelog the following
+    if (recipes[i].title.toLowerCase() === title.toLowerCase()) {
+      console.log(`Recipe "${title}" already exists.`);
+      return;
+    }
+  }
 
-//FUNCTION -- UPDATE RECIPE INSTRUCTIONS
-function updateRecipe() {} //END updateRecipe FUNCTION
+  // Add the new recipe and displays in console
+  recipes.push({ title, ingredients, instructions });
+  console.log(`Recipe "${title}" added.`);
+}
 
-//FUNCTION DISPLAY ALL RECIPES WITH DETAILS
-function displayRecipe() {} //END displayRecipe FUNCTION
+//FUNCTION -- UPDATE RECIPE
+function updateRecipe(title, newInstructions) {
+  // loop through recipie arr
+  for (let i = 0; i < recipes.length; i++) {
+    //if recipe = to exicting recipe instructions will update and display
+    if (recipes[i].title.toLowerCase() === title.toLowerCase()) {
+      recipes[i].instructions = newInstructions;
+      console.log(`Recipe "${title}" updated.`);
+      return;
+    }
+  }
+  console.log(`Recipe "${title}" not found.`);
+}
+
+// FUNCTION TO DISPLAY RECIPE BOOK
+function displayRecipe() {
+  if (recipes.length === 0) {
+    console.log("No recipes available.");
+    return;
+  }
+  console.log("Recipe Book:");
+  //loops through recipe arr and prints information
+  for (let i = 0; i < recipes.length; i++) {
+    console.log(`Title: ${recipes[i].title}`);
+    console.log(`Ingredients: ${recipes[i].ingredients.join(", ")}`);
+    console.log(`Instructions: ${recipes[i].instructions}`);
+    console.log(""); //Space to separate recipes
+  }
+}
+
+// ADD RECIPE
+addNewRecipe("Smoothie", ["Bananas", "Milk", "Honey"], "Blend until smooth.");
+addNewRecipe(
+  "Pasta",
+  ["Pasta", "Tomato Sauce", "Cheese"],
+  "Cook pasta and mix with sauce and cheese."
+);
+
+// UPDATE RECIPE
+updateRecipe("Pancakes", "Mix ingredients and cook on a hot griddle.");
+
+// DISPLAY IN CONSOLE
+displayRecipe();
 
 //#endregion
 
