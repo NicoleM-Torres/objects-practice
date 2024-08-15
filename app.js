@@ -312,12 +312,13 @@ let books_arr = [
 
 //FUNCTION-- FILTER AVAILABLE BOOKS
 function filterAvailableBooks() {
+  let availableBooks = [];
   for (let i = 0; i < i < books_arr.length; i++) {
     if (books_arr[i].status === "available") {
-      filterAvailableBooks.push(books_arr[i]);
+      availableBooks.push(books_arr[i]);
     } //EDN IF STATEMENT
   } //END FOR LOOP
-  return filterAvailableBooks;
+  return availableBooks;
 } //END fiulterAvailableBooks FUNCTIONS
 
 //FUNCTION -- FILTER BORROWED BOOKS
@@ -335,15 +336,15 @@ function filterBorrowedBooks() {
 console.log("My available books:");
 let availableBooks = filterAvailableBooks();
 for (let i = 0; i < availableBooks.length; i++) {
-    console.log(`Title: ${availableBooks[i].title}`);
+  console.log(`Title: ${availableBooks[i].title}`);
 } //END FOR LOOP
 
-
-console.log ("Borrowed Books:");
+console.log("Borrowed Books:");
 let borrowedBooks = filterBorrowedBooks();
 for (let i = 0; i < borrowedBooks.length; i++) {
+  console.log(`Title ${borrowedBooks[i].title}`);
+} //END FOR LOOP
 
-}//END FOR LOOP
 //#endregion
 
 //#endregion
