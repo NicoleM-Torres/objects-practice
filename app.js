@@ -302,7 +302,7 @@ function viewCollection() {
 //#region Library Book Tracker
 
 //VARIABLE -- ARR
-let books = [
+let books_arr = [
   { title: "The Great Gatsby", status: "available" },
   { title: "1984", status: "borrowed" },
   { title: "To Kill a Mockingbird", status: "available" },
@@ -310,9 +310,26 @@ let books = [
   { title: "Moby-Dick", status: "available" },
 ];
 
+//FUNCTION-- FILTER AVAILABLE BOOKS
+function filterAvailableBooks() {
+  for (let i = 0; i < i < books_arr.length; i++) {
+    if (books_arr[i].status === "available") {
+      filterAvailableBooks.push(books_arr[i]);
+    } //EDN IF STATEMENT
+  } //END FOR LOOP
+  return filterAvailableBooks;
+} //END fiulterAvailableBooks FUNCTIONS
 
+//FUNCTION -- FILTER BORROWED BOOKS
+function filterBorrowedBooks() {
+  let borrowedBooks = [];
+  for (let i = 0; i < books_arr.length; i++) {
 
+  }//END FOR LOOP
+} //END filterBorrowedBoooks FUNCTION
 
+//DISPLAYY IN CONSOLE
+console.log();
 
 //#endregion
 
