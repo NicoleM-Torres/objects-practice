@@ -241,11 +241,14 @@ let movie = [
   },
 ];
 
+// MOVIE COLLECTION
+// viewCollection();
+
 // ADD MOVIE
 addMovie("The Avengers", "Action", 8.5);
 
 // RATE MOVIE IN COLLECTION
-rateMovie("Ghostlight", 9.0);
+rateMovie("Inside Out 2", 9.0);
 
 // MOVIE COLLECTION
 viewCollection();
@@ -297,6 +300,19 @@ function viewCollection() {
 //#endregion
 
 //#region Library Book Tracker
+
+//VARIABLE -- ARR
+let books = [
+  { title: "The Great Gatsby", status: "available" },
+  { title: "1984", status: "borrowed" },
+  { title: "To Kill a Mockingbird", status: "available" },
+  { title: "The Catcher in the Rye", status: "borrowed" },
+  { title: "Moby-Dick", status: "available" },
+];
+
+
+
+
 
 //#endregion
 
