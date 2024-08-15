@@ -415,15 +415,15 @@ function displayRecipe() {
 }
 
 // ADD RECIPE
-addNewRecipe("Smoothie", ["Bananas", "Milk", "Honey"], "Blend until smooth.");
+addNewRecipe("Smoothie", ["Bananas", "Orange Juice", "Strawberries"], "Blend until smooth.");
 addNewRecipe(
   "Pasta",
-  ["Pasta", "Tomato Sauce", "Cheese"],
-  "Cook pasta and mix with sauce and cheese."
+  ["Pasta", "Vodka Sauce", "Veggies"],
+  "Cook pasta and mix with sauce and veggies."
 );
 
 // UPDATE RECIPE
-updateRecipe("Pancakes", "Mix ingredients and cook on a hot griddle.");
+updateRecipe("Pancakes", "Mix ingredients and cook on a hot pan.");
 
 // DISPLAY IN CONSOLE
 displayRecipe();
