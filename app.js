@@ -313,7 +313,7 @@ let books_arr = [
 //FUNCTION-- FILTER AVAILABLE BOOKS
 function filterAvailableBooks() {
   let availableBooks = [];
-  for (let i = 0; i < i < books_arr.length; i++) {
+  for (let i = 0; i < books_arr.length; i++) {
     if (books_arr[i].status === "available") {
       availableBooks.push(books_arr[i]);
     } //EDN IF STATEMENT
