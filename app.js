@@ -350,7 +350,6 @@ let borrowedBooks = filterBorrowedBooks();
 for (let i = 0; i < borrowedBooks.length; i++) {
   console.log(`Title ${borrowedBooks[i].title}`);
 } //END FOR LOOP
-
 //#endregion
 
 //#region Recipe Organizer
@@ -416,9 +415,9 @@ function displayRecipe() {
 
 // ADD RECIPE
 addNewRecipe(
-  "Smoothie",
-  ["Bananas", "Orange Juice", "Strawberries"],
-  "Blend until smooth."
+  "Mofongo",
+  ["Platano", "Butter", "Garlic"],
+  "Cut into slices, fry and mash in 'pilon'."
 );
 addNewRecipe(
   "Pasta",
