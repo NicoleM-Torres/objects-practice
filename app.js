@@ -486,7 +486,7 @@ updatePrice("Honda", "Civic", 2019, 15000);
 
 //#endregion
 
-//#region Pet Names with Details
+//#region Pet Directory
 // Pet CLASS
 class Pet {
   constructor(petName, type, age) {
