@@ -487,19 +487,26 @@ updatePrice("Honda", "Civic", 2019, 15000);
 //#endregion
 
 //#region Pet Names with Details
-let petDirectory = [
-  {
-    petName: "Scooby-Doo",
-    type: "Dog",
-    age: 7,
-  },
-];
+//PET CLASS
+class pet {
+  constructor (petName, type, age) {
+      this.petName = petName;
+      this.type = type;
+      this.age = age;
+  }//END CONSTRUCTOR
+} //END pet CLASS
 
-// FUNCTION -- ADD A NEW PET
-function addPet() {} //END addPet FUNCTION
+//petDirectory CLASS
+class petDirectory {
+  constructor(){
+    this.pets=[];
+  }//END CONSTRUCTOR
+}//END petDirectory CLASS
 
-//FUNCTION DISPLAY PET NAMES
-function displayPetDirectory() {} //END displlayPetDirectory FUNCTION
+//METHOD TO ADD NEW PET
+
+//METHOD TO DISPLAY PET DIRECTORY
+
 //#endregion
 
 //#endregion
