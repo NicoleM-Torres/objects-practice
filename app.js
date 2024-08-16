@@ -92,18 +92,6 @@ let contactBook = [
   },
 ];
 
-// NEW CONTACT
-addContact("Sarah", 4444444444, "sarah@lucky.com");
-
-// VIEW CONTACTS
-viewContacts();
-
-// SEARCH CONTACT
-searchContactByName("Eric");
-
-// SEARCH FOR NOT EXISTING CONTACT
-searchContactByName("Zach");
-
 //FUNCTION -- ADDING A NEW CONTACT
 function addContact(name, phoneNumber, email) {
   contactBook.push({ name, phoneNumber, email }); //adds new element to arr
@@ -152,6 +140,18 @@ function searchContactByName(name) {
     console.log(`No contact found with the name ${name}.`);
   } //END IF STATEMENT
 } //END searchContactByName FUNCTION
+
+// NEW CONTACT
+addContact("Sarah", 4444444444, "sarah@lucky.com");
+
+// VIEW CONTACTS
+viewContacts();
+
+// SEARCH CONTACT
+searchContactByName("Eric");
+
+// SEARCH FOR NOT EXISTING CONTACT
+searchContactByName("Zach");
 
 //#endregion
 
