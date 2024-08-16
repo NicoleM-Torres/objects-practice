@@ -439,15 +439,50 @@ let cars = [
   { make: "Toyota", model: "Camry", year: 2020, price: 24000 },
   { make: "Honda", model: "Civic", year: 2019, price: 22000 },
 ];
-
 //FUNCTION -- ADD NEW CARS
-function addNewCar() {} //END addNewCar FUNCTION
+
+function addNewCar(make, model, year, price) {
+  //creates new variable to store objects into
+  let newCar = { make, model, year, price };
+  cars.push(newCar); //adds new values to var
+  console.log(`You added ${newCar.make} ${newCar.model} to your inventory.`);
+} //END addNewCar FUNCTION
 
 //FUNCTION -- UPDATE CAR PRICE
-function updateCar() {} //END updateCar FUNCTION
+function updatePrice(make, model, year, newPrice) {
+  /*.find method loops through arr and if the parameters 
+  are match the make, model and year inside the array, it
+  will update the price of the car*/
+  let car = cars.find(
+    (car) => car.make === make && car.model === model && car.year === year
+  );
+  /*if the parameters match the obj in the arr, it is stored in 'car'.
+  then it allows for updating the car.price to newPrice*/
+  if (car) {
+    car.price = newPrice;
+    console.log(`Price updated: ${make} ${model} ${year} $${newPrice}`);
+  } else {
+    console.log("Car not part of inventory.");
+  } // END IF ELSE STATEMENT
+} //END updatePrice FUNCTION
 
 //FUNCTION -- DISPLAY CARS IN INVENTORY
-function displayCars() {} //END displayCars FUNCTION
+function displayCars() {
+  console.log("Current Inventory:");
+  /*it loops through the objects stored in cars object-arr and displays to console
+  -- arrow function that serves as a callback function for forEach.
+  For each element in the cars array, the function is called with the 
+  current element (a car object) as its argument, arg = car. */
+  cars.forEach((car) => {
+    console.log(`${car.make}${car.model} ${car.year} $${car.price}`);
+  });
+} //END displayCars FUNCTION
+
+//DISPLAY INVENTORY
+displayCars();
+console.log("");
+addNewCar("Mercedes", "AMG W14 E", 2023, 300000);
+updatePrice("Honda", "Civic", 2019, 15000);
 
 //#endregion
 
@@ -461,9 +496,10 @@ let petDirectory = [
 ];
 
 // FUNCTION -- ADD A NEW PET
+function addPet() {} //END addPet FUNCTION
 
 //FUNCTION DISPLAY PET NAMES
-
+function displayPetDirectory() {} //END displlayPetDirectory FUNCTION
 //#endregion
 
 //#endregion
