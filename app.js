@@ -487,53 +487,54 @@ updatePrice("Honda", "Civic", 2019, 15000);
 //#endregion
 
 //#region Pet Names with Details
-//PET CLASS
+// Pet CLASS
 class Pet {
-  constructor (petName, type, age) {
-      this.petName = petName;
-      this.type = type;
-      this.age = age;
-  }//END CONSTRUCTOR
-} //END pet CLASS
+  constructor(petName, type, age) {
+    this.petName = petName;
+    this.type = type;
+    this.age = age;
+  } //END CONSTRUCTOR
+} //END Pet CLASS
 
-//petDirectory CLASS
+// PetDirectory CLASS
 class PetDirectory {
-  constructor(){
-    this.pets=[];
-  }//END CONSTRUCTOR
-}//END petDirectory CLASS
+  constructor() {
+    this.pets = []; //arr to store new pets
+  } //END CONSTRUCTOR
 
-//METHOD TO ADD NEW PET
-addPet (petName, type, age){
-  let newPet = new Pet (petName,type,age);
-  this.pets.push(newPet); //adds new pet in the petDirectory class arr
-  console.log(`New pet in directory: ${petName}, ${type}, ${age},`)
-} //END addPet METHOD
+  // METHOD TO ADD A NEW PET
+  addPet(petName, type, age) {
+    let newPet = new Pet(petName, type, age);
+    this.pets.push(newPet); // Adds new pet to the pets array
+    console.log(`New pet in directory: ${petName}, ${type}, ${age}`);
+  }
 
-//METHOD TO DISPLAY PET DIRECTORY
-  petDirectory() {
+  // METHOD TO DISPLAY PET DIRECTORY
+  displayPetDirectory() {
     console.log("Pet Directory:");
-    /*it loops through the objects stored in pet class and displays to console
-    -- arrow function that serves as a callback function for forEach.
-    For each element in the pets class, the class is called with the 
-    current element (a pet ) as its argument, arg = pet. */
-    this.pets.forEach(pet => {
+    /*Loops through each pet and details stored in 'pets' arr,
+    and displays their info to console -- iterates through each
+    pet object inside 'pets_arr inside PetsDirectory Clas
+    => calls back each item in arr */
+    this.pets.forEach((pet) => {
       console.log(`${pet.petName}, Type: ${pet.type}, Age: ${pet.age}`);
     });
-  } //END forEach
-}//END OF displayPetDirectory METHOD
-   
+  } //displayPetDirectory METHOD
+} //END PetDirectory Class
 
-const petDirectory = new PetDirectory();
+//DISPLAY TO CONSOLE
+console.log("");
+let animalDirectory = new PetDirectory();
 
 // ADD PETS
-petDirectory.addPet("Scooby-Doo", "Dog", 7);
-petDirectory.addPet("Whiskers", "Cat", 3);
-petDirectory.addPet("Polly", "Parrot", 2);
+animalDirectory.addPet("Scooby-Doo", "Dog", 7);
+animalDirectory.addPet("Polly", "Cotorra", 3);
+animalDirectory.addPet("Stefan", "Cat", 2);
 
-// DISPLAY TO CONSOLE
-petDirectory.displayPetDirectory();
+// DISPLAY PET DIRECTORY
+console.log("");
 
+animalDirectory.displayPetDirectory();
 //#endregion
 
 //#endregion
